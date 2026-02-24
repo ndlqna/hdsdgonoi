@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HƯỚNG DẪN SỬ DỤNG - DÀNH CHO QUẢN TRỊ VIÊN | Hệ Thống Lịch Công Tác Đảng Ủy Xã Gò Nổi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+        body { font-family: 'Roboto', system-ui, sans-serif; }
+        .toc a { transition: all 0.3s; }
+        .toc a:hover { background-color: #991b1b; color: white; padding-left: 1.25rem; }
+        .section-title { position: relative; padding-left: 1.5rem; }
+        .section-title:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.35rem;
+            width: 8px;
+            height: 1.6rem;
+            background: linear-gradient(to bottom, #991b1b, #ef4444);
+            border-radius: 9999px;
+        }
+        .step-number {
+            background: #991b1b;
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            font-weight: 700;
+        }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { padding: 14px 20px; vertical-align: top; border: 1px solid #e5e7eb; }
+        th { background: #fef2f2; color: #991b1b; font-weight: 700; }
+        .permission-table td:first-child { font-weight: 600; }
+    </style>
+</head>
+<body class="bg-zinc-100 text-zinc-800">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl min-h-screen">
+
+        <!-- HEADER -->
+        <header class="bg-red-800 text-white py-10 px-12">
+            <div class="flex items-center gap-6">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-5xl">👑</div>
+                <div>
+                    <h1 class="text-4xl font-bold tracking-tighter">HỆ THỐNG THÔNG BÁO LỊCH CÔNG TÁC</h1>
+                    <p class="text-red-200 text-2xl mt-1 font-medium">ĐẢNG ỦY XÃ GÒ NỔI</p>
+                    <div class="mt-3 inline-flex items-center gap-3 bg-white/10 px-5 py-2 rounded-3xl text-sm">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-3xl font-medium">DÀNH CHO QUẢN TRỊ VIÊN</span>
+                        <span class="text-red-100">Phiên bản 1.0 • 24/02/2026</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex">
+            <!-- SIDEBAR MỤC LỤC -->
+            <div class="w-80 bg-zinc-50 border-r border-zinc-200 p-8 h-[calc(100vh-172px)] overflow-y-auto sticky top-0">
+                <h2 class="uppercase text-red-700 font-bold text-sm tracking-widest mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-bars"></i> MỤC LỤC CHI TIẾT
+                </h2>
+                <nav class="toc space-y-1 text-[15px]">
+                    <a href="#gioi-thieu" class="block py-3 px-5 rounded-2xl hover:bg-red-700">1. Giới thiệu</a>
+                    <a href="#quyen-han" class="block py-3 px-5 rounded-2xl hover:bg-red-700">2. Quyền hạn Admin</a>
+                    <a href="#dang-nhap" class="block py-3 px-5 rounded-2xl hover:bg-red-700">3. Đăng nhập hệ thống</a>
+                    <a href="#dashboard" class="block py-3 px-5 rounded-2xl hover:bg-red-700">4. Trang Tổng quan</a>
+                    <a href="#ql-nguoidung" class="block py-3 px-5 rounded-2xl hover:bg-red-700">5. Quản lý Người dùng</a>
+                    <a href="#ql-phongban" class="block py-3 px-5 rounded-2xl hover:bg-red-700">6. Quản lý Phòng ban</a>
+                    <a href="#ql-lich" class="block py-3 px-5 rounded-2xl hover:bg-red-700">7. Quản lý Lịch công tác</a>
+                    <a href="#thong-bao" class="block py-3 px-5 rounded-2xl hover:bg-red-700">8. Gửi Thông báo</a>
+                    <a href="#admin-pin" class="block py-3 px-5 rounded-2xl hover:bg-red-700">9. Quản lý Admin PIN</a>
+                    <a href="#nhat-ky" class="block py-3 px-5 rounded-2xl hover:bg-red-700">10. Nhật ký Hệ thống</a>
+                    <a href="#quick" class="block py-3 px-5 rounded-2xl hover:bg-red-700">11. Hướng dẫn nhanh</a>
+                    <a href="#faq" class="block py-3 px-5 rounded-2xl hover:bg-red-700">12. Câu hỏi thường gặp</a>
+                    <a href="#ho-tro" class="block py-3 px-5 rounded-2xl hover:bg-red-700">13. Hỗ trợ kỹ thuật</a>
+                </nav>
+            </div>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <div class="flex-1 p-12 max-w-3xl prose prose-zinc prose-headings:text-red-800">
+
+                <section id="gioi-thieu">
+                    <h2 class="section-title text-3xl font-bold">1. GIỚI THIỆU</h2>
+                    <div class="my-8 p-8 bg-red-50 border-l-8 border-red-700 rounded-3xl">
+                        <p class="text-lg leading-relaxed">
+                            Tài liệu này dành riêng cho đồng chí <strong>Quản trị viên (ADMIN)</strong> hệ thống Thông báo Lịch công tác Đảng ủy Xã Gò Nổi. 
+                            Với tư cách là người quản trị, đồng chí có toàn quyền quản lý người dùng, phòng ban, lịch công tác, gửi thông báo hệ thống, 
+                            theo dõi nhật ký hoạt động và đảm bảo hệ thống vận hành trơn tru.
+                        </p>
+                        <p class="mt-6 text-red-800 font-semibold">
+                            🔐 Hãy luôn giữ bí mật thông tin đăng nhập và Admin PIN. Đây là trách nhiệm quan trọng của người quản trị!
+                        </p>
+                    </div>
+                </section>
+
+                <section id="quyen-han" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">2. QUYỀN HẠN ADMIN</h2>
+                    <p class="mt-6 text-lg">Admin có <strong>TẤT CẢ quyền của Chuyên viên</strong>, cộng thêm các quyền đặc biệt sau:</p>
+
+                    <div class="mt-10 bg-white border-2 border-red-600 rounded-3xl p-10">
+                        <table class="permission-table text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Chức năng</th>
+                                    <th class="text-center w-24">USER</th>
+                                    <th class="text-center w-24">ADMIN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Xem tổng số người dùng</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Sửa/Xóa lịch của người khác</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Tạo/Sửa/Xóa người dùng</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Khóa/Mở khóa tài khoản</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Reset mật khẩu người khác</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Tạo/Sửa/Xóa phòng ban</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Quản lý thành viên phòng ban</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Gửi thông báo hệ thống</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Xem thiết bị của người khác</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Quản lý Admin PIN</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Xem nhật ký hệ thống</td>
+                                    <td class="text-center">❌</td>
+                                    <td class="text-center text-red-600">✅</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="dang-nhap" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">3. ĐĂNG NHẬP HỆ THỐNG</h2>
+                    <div class="mt-8 space-y-6">
+                        <div class="flex gap-6">
+                            <div class="step-number">1</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Mở trình duyệt và truy cập hệ thống</p>
+                                <p class="text-zinc-600">Sử dụng Chrome, Edge hoặc Firefox để có trải nghiệm tốt nhất.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">2</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Nhập thông tin đăng nhập</p>
+                                <p class="text-zinc-600">Email và Mật khẩu tài khoản Admin của đồng chí.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">3</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Nhấn "Đăng nhập"</p>
+                                <p class="text-zinc-600">Lần đầu tiên, hệ thống sẽ yêu cầu đổi mật khẩu và thiết lập Admin PIN.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="dashboard" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">4. TRANG TỔNG QUAN (DASHBOARD)</h2>
+                    <p class="mt-6 text-lg">Dashboard của Admin hiển thị thêm thông tin quan trọng về toàn hệ thống:</p>
+
+                    <div class="grid grid-cols-1 gap-8 mt-10">
+                        <div class="bg-white border border-red-200 p-8 rounded-3xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i class="fa-solid fa-users text-3xl text-red-600"></i>
+                                <div>
+                                    <p class="font-bold text-xl">Tổng số người dùng</p>
+                                    <p class="text-red-700">Xem tổng số người dùng trong hệ thống</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-red-200 p-8 rounded-3xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i class="fa-solid fa-history text-3xl text-red-600"></i>
+                                <div>
+                                    <p class="font-bold text-xl">Hoạt động gần đây</p>
+                                    <p class="text-red-700">Xem TẤT CẢ hoạt động của mọi người, không chỉ của bản thân</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-red-200 p-8 rounded-3xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i class="fa-solid fa-calendar-alt text-3xl text-red-600"></i>
+                                <div>
+                                    <p class="font-bold text-xl">Lịch tuần này & Lịch hôm nay</p>
+                                    <p class="text-red-700">Bao gồm lịch của tất cả mọi người, giúp Admin nắm bắt công việc toàn xã</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ql-nguoidung" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">5. QUẢN LÝ NGƯỜI DÙNG</h2>
+                    <p class="mt-6 text-lg">Chức năng quan trọng nhất của Admin – quản lý tài khoản người dùng.</p>
+
+                    <div class="mt-10 space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">5.1. Xem danh sách người dùng</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Chọn menu <strong>Quản lý người dùng</strong></li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Xem thông tin: Họ tên, Email, Vai trò, Phòng ban, Trạng thái</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Tìm kiếm theo tên, email</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Lọc theo vai trò (USER/ADMIN), phòng ban, trạng thái</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">5.2. Tạo người dùng mới</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-6">
+                                    <div class="step-number">1</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn nút "Thêm người dùng"</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">2</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Điền thông tin:</p>
+                                        <ul class="mt-3 space-y-2 text-sm">
+                                            <li>• <strong>Họ tên:</strong> Tên đầy đủ của người dùng</li>
+                                            <li>• <strong>Email:</strong> Email đăng nhập (phải duy nhất)</li>
+                                            <li>• <strong>Mật khẩu:</strong> Mật khẩu khởi tạo (tối thiểu 8 ký tự)</li>
+                                            <li>• <strong>Vai trò:</strong> Chọn USER hoặc ADMIN</li>
+                                            <li>• <strong>Phòng ban:</strong> Chọn phòng ban (không bắt buộc)</li>
+                                            <li>• <strong>Trạng thái:</strong> Kích hoạt/Vô hiệu hóa</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">3</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn "Tạo mới"</p>
+                                        <p class="text-red-600 mt-2">⚠️ Quan trọng: Thông báo thông tin đăng nhập cho người dùng và nhắc đổi mật khẩu ngay!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">5.3. Sửa thông tin người dùng</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Nhấn nút <strong>Sửa</strong> ở người dùng cần cập nhật → Thay đổi thông tin → Nhấn <strong>Cập nhật</strong></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">5.4. Khóa/Mở khóa tài khoản</h3>
+                            <div class="bg-amber-50 border border-amber-300 p-6 rounded-2xl">
+                                <p class="font-medium">Bật/Tắt nút <strong>"Hoạt động"</strong> ở cột trạng thái để khóa/mở tài khoản.</p>
+                                <p class="mt-4 text-amber-800">⚠️ Lưu ý: Tài khoản bị khóa sẽ không thể đăng nhập. Admin không thể khóa chính mình!</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">5.5. Reset mật khẩu người dùng</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-6">
+                                    <div class="step-number">1</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn nút "Reset mật khẩu" ở người dùng cần reset</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">2</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhập Admin PIN của đồng chí</p>
+                                        <p class="text-zinc-600">Bảo mật lớp 2 để tránh lạm dụng quyền</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">3</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhập mật khẩu mới → Xác nhận</p>
+                                        <p class="text-red-600 mt-2">⚠️ Thông báo ngay cho người dùng và yêu cầu đổi mật khẩu!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ql-phongban" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">6. QUẢN LÝ PHÒNG BAN</h2>
+                    <p class="mt-6 text-lg">Phân nhóm người dùng theo bộ phận để dễ quản lý.</p>
+
+                    <div class="mt-10 space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">6.1. Xem danh sách phòng ban</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Menu <strong>Quản lý phòng ban</strong> → Xem tên, màu sắc, số thành viên, trạng thái</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">6.2. Tạo phòng ban mới</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-6">
+                                    <div class="step-number">1</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn "Tạo phòng ban"</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">2</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Điền thông tin:</p>
+                                        <ul class="mt-3 space-y-2 text-sm">
+                                            <li>• <strong>Tên phòng ban:</strong> Ví dụ: "Chi bộ 1", "Chi bộ 2"</li>
+                                            <li>• <strong>Màu sắc:</strong> Chọn màu để dễ phân biệt</li>
+                                            <li>• <strong>Mô tả:</strong> Mô tả ngắn (không bắt buộc)</li>
+                                            <li>• <strong>Trạng thái:</strong> Hoạt động/Không hoạt động</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">3</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn "Lưu"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">6.3. Quản lý thành viên phòng ban</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl space-y-4">
+                                <p><strong>Thêm thành viên:</strong></p>
+                                <p class="text-sm ml-6">Nhấn "Quản lý thành viên" → Chọn người dùng → Nhấn "Thêm"</p>
+                                <p class="mt-4"><strong>Xóa thành viên:</strong></p>
+                                <p class="text-sm ml-6">Nhấn "Quản lý thành viên" → Chọn thành viên → Nhấn "Xóa"</p>
+                                <p class="mt-4 text-red-600">💡 Mẹo: Một người có thể thuộc nhiều phòng ban!</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">6.4. Sửa/Xóa phòng ban</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p><strong>Sửa:</strong> Nhấn nút "Sửa" → Cập nhật thông tin → Lưu</p>
+                                <p class="mt-3"><strong>Xóa:</strong> Nhấn nút "Xóa" → Xác nhận</p>
+                                <p class="mt-4 text-amber-700">⚠️ Xóa phòng ban không xóa thành viên, chỉ bỏ liên kết</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ql-lich" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">7. QUẢN LÝ LỊCH CÔNG TÁC</h2>
+                    <p class="mt-6 text-lg">Admin có toàn quyền quản lý lịch của TẤT CẢ mọi người.</p>
+
+                    <div class="mt-10 bg-white border-2 border-red-600 rounded-3xl p-10">
+                        <div class="space-y-6">
+                            <div>
+                                <p class="font-bold text-xl text-red-700">✅ Admin có thể:</p>
+                                <ul class="mt-4 space-y-3">
+                                    <li class="flex items-start gap-3"><span class="text-red-600">•</span> Xem lịch của bất kỳ ai (bật chế độ "Xem tất cả")</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600">•</span> Sửa bất kỳ lịch nào trong hệ thống</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600">•</span> Xóa bất kỳ lịch nào trong hệ thống</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600">•</span> Tạo lịch và chỉ định người tham gia</li>
+                                    <li class="flex items-start gap-3"><span class="text-red-600">•</span> Điều phối lịch công tác toàn xã</li>
+                                </ul>
+                            </div>
+                            <div class="mt-8 p-6 bg-amber-50 border border-amber-300 rounded-2xl">
+                                <p class="font-medium text-amber-800">⚠️ Lưu ý quan trọng:</p>
+                                <p class="mt-2">Chỉ sử dụng quyền này khi thực sự cần thiết để điều phối công việc. Tránh can thiệp vào lịch cá nhân không cần thiết.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-zinc-50 p-8 rounded-2xl">
+                        <p class="font-bold text-lg mb-4">Cách sửa/xóa lịch của người khác:</p>
+                        <ol class="space-y-3">
+                            <li>1. Vào trang <strong>Lịch công tác</strong></li>
+                            <li>2. Bật chế độ <strong>"Xem tất cả"</strong> (thay vì "Của tôi")</li>
+                            <li>3. Tìm và click vào lịch cần sửa/xóa</li>
+                            <li>4. Nhấn <strong>Sửa</strong> hoặc <strong>Xóa</strong> → Xác nhận</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="thong-bao" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">8. GỬI THÔNG BÁO HỆ THỐNG</h2>
+                    <p class="mt-6 text-lg">Admin có thể gửi thông báo quan trọng đến người dùng.</p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex gap-6">
+                            <div class="step-number">1</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Chọn menu "Thông báo" → Tab "Gửi thông báo"</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">2</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Điền nội dung thông báo:</p>
+                                <ul class="mt-3 space-y-2 text-sm">
+                                    <li>• <strong>Tiêu đề:</strong> Tiêu đề ngắn gọn</li>
+                                    <li>• <strong>Nội dung:</strong> Nội dung chi tiết</li>
+                                    <li>• <strong>Người nhận:</strong> Chọn người dùng (có thể chọn nhiều)</li>
+                                    <li>• <strong>Độ ưu tiên:</strong> Thấp/Trung bình/Cao</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">3</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Nhấn "Gửi ngay"</p>
+                                <p class="text-red-600 mt-2">⚠️ Chỉ người dùng đã đăng ký thiết bị mới nhận được thông báo!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-white border border-red-200 p-8 rounded-3xl">
+                        <p class="font-bold text-lg mb-4">Xem danh sách thiết bị:</p>
+                        <p>Tab <strong>"Tất cả thiết bị"</strong> cho phép Admin xem thiết bị của tất cả người dùng, giúp kiểm tra ai đã/chưa đăng ký nhận thông báo.</p>
+                    </div>
+                </section>
+
+                <section id="admin-pin" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">9. QUẢN LÝ ADMIN PIN</h2>
+                    <p class="mt-6 text-lg">Admin PIN là mã bảo mật 6 chữ số dùng để xác thực khi reset mật khẩu người dùng.</p>
+
+                    <div class="mt-10 space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">9.1. Thiết lập Admin PIN lần đầu</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-6">
+                                    <div class="step-number">1</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Chọn menu "Quản lý Admin PIN"</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">2</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhấn "Thiết lập PIN"</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="step-number">3</div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Nhập PIN mới (6 chữ số) → Xác nhận PIN → Lưu</p>
+                                        <p class="text-red-600 mt-2">🔐 Quan trọng: Hãy ghi nhớ PIN này! Đồng chí sẽ cần dùng mỗi khi reset mật khẩu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">9.2. Đổi Admin PIN</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Chọn <strong>"Đổi PIN"</strong> → Nhập PIN hiện tại → Nhập PIN mới → Xác nhận PIN mới → <strong>"Đổi PIN"</strong></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">9.3. PIN bị khóa - Mở khóa bằng OTP</h3>
+                            <div class="bg-amber-50 border border-amber-300 p-6 rounded-2xl">
+                                <p class="font-medium mb-4">Sau 5 lần nhập sai PIN, hệ thống sẽ khóa tạm thời để bảo mật.</p>
+                                <p><strong>Cách mở khóa:</strong></p>
+                                <ol class="mt-3 space-y-2 ml-6">
+                                    <li>1. Chọn <strong>"Mở khóa bằng OTP"</strong></li>
+                                    <li>2. Hệ thống sẽ gửi mã OTP qua email</li>
+                                    <li>3. Kiểm tra email và nhập mã OTP</li>
+                                    <li>4. Xác nhận để mở khóa</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="nhat-ky" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">10. NHẬT KÝ HỆ THỐNG</h2>
+                    <p class="mt-6 text-lg">Theo dõi mọi hoạt động quan trọng trong hệ thống – ai làm gì, khi nào.</p>
+
+                    <div class="mt-10 space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">10.1. Xem nhật ký</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Chọn menu <strong>"Nhật ký hệ thống"</strong> → Xem bảng danh sách các hoạt động:</p>
+                                <ul class="mt-4 space-y-2 ml-6">
+                                    <li>• Thời gian thực hiện</li>
+                                    <li>• Người thực hiện</li>
+                                    <li>• Hành động (Tạo/Cập nhật/Xóa)</li>
+                                    <li>• Đối tượng (Người dùng/Lịch/Phòng ban/Thông báo)</li>
+                                    <li>• Chi tiết thay đổi</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">10.2. Lọc nhật ký</h3>
+                            <div class="bg-white border border-red-200 p-8 rounded-3xl">
+                                <p class="font-bold mb-4">Đồng chí có thể lọc theo:</p>
+                                <div class="grid grid-cols-2 gap-6 text-sm">
+                                    <div>
+                                        <p class="font-semibold">Khoảng thời gian</p>
+                                        <p class="text-zinc-600">Chọn từ ngày - đến ngày</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Người thực hiện</p>
+                                        <p class="text-zinc-600">Chọn người dùng cụ thể</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Loại thao tác</p>
+                                        <p class="text-zinc-600">CREATE/UPDATE/DELETE</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Đối tượng</p>
+                                        <p class="text-zinc-600">User/Schedule/Department/Notification</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">10.3. Xuất nhật ký ra Excel</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Nhấn nút <strong>"Xuất Excel"</strong> để tải xuống file báo cáo, tiện lợi cho việc lưu trữ và kiểm tra.</p>
+                                <p class="mt-4 text-red-600">💡 Mẹo: Nên xuất Excel cuối mỗi tháng để backup dữ liệu!</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-700 mb-4">10.4. Xem chi tiết thay đổi</h3>
+                            <div class="bg-zinc-50 p-6 rounded-2xl">
+                                <p>Click vào bản ghi trong nhật ký để xem chi tiết: Giá trị cũ → Giá trị mới, hiểu rõ thay đổi gì đã xảy ra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="quick" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">11. HƯỚNG DẪN NHANH</h2>
+                    <div class="mt-8 bg-zinc-900 text-white p-10 rounded-3xl font-mono text-sm leading-relaxed">
+                        <p class="text-red-400 mb-4">TẠO NGƯỜI DÙNG MỚI:</p>
+                        Quản lý người dùng → Thêm người dùng → Điền thông tin → Tạo mới<br><br>
+                        
+                        <p class="text-red-400 mb-4">RESET MẬT KHẨU:</p>
+                        Quản lý người dùng → Reset mật khẩu → Nhập Admin PIN → Nhập MK mới<br><br>
+                        
+                        <p class="text-red-400 mb-4">KHÓA TÀI KHOẢN:</p>
+                        Quản lý người dùng → Bật/Tắt nút "Hoạt động"<br><br>
+                        
+                        <p class="text-red-400 mb-4">TẠO PHÒNG BAN:</p>
+                        Quản lý phòng ban → Tạo phòng ban → Điền thông tin → Lưu<br><br>
+                        
+                        <p class="text-red-400 mb-4">GỬI THÔNG BÁO:</p>
+                        Thông báo → Gửi thông báo → Điền nội dung → Chọn người nhận → Gửi ngay<br><br>
+                        
+                        <p class="text-red-400 mb-4">THIẾT LẬP ADMIN PIN:</p>
+                        Quản lý Admin PIN → Thiết lập PIN → Nhập 6 chữ số → Xác nhận<br><br>
+                        
+                        <p class="text-red-400 mb-4">XEM NHẬT KÝ:</p>
+                        Nhật ký hệ thống → Lọc (nếu cần) → Xem chi tiết
+                    </div>
+                </section>
+
+                <section id="faq" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">12. CÂU HỎI THƯỜNG GẶP</h2>
+                    <div class="mt-10 space-y-10">
+                        <div>
+                            <p class="font-semibold text-lg">Tôi quên Admin PIN, phải làm sao?</p>
+                            <p class="text-zinc-600">Sau 5 lần nhập sai, hệ thống sẽ khóa tạm thời. Chọn "Mở khóa bằng OTP", kiểm tra email và nhập mã OTP để mở khóa. Sau đó có thể đổi PIN mới.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Tôi có thể khóa tài khoản Admin khác không?</p>
+                            <p class="text-zinc-600">Có, Admin có quyền khóa bất kỳ tài khoản nào, kể cả Admin khác. Nhưng không thể khóa chính mình.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Người dùng không nhận được thông báo tôi gửi?</p>
+                            <p class="text-zinc-600">Kiểm tra họ đã đăng ký thiết bị chưa bằng cách vào tab "Tất cả thiết bị". Chỉ những người đã đăng ký mới nhận được thông báo.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Làm sao biết ai đã sửa/xóa lịch?</p>
+                            <p class="text-zinc-600">Vào "Nhật ký hệ thống", lọc đối tượng "Schedule" và hành động "UPDATE" hoặc "DELETE" để xem chi tiết.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Xóa phòng ban có xóa người dùng không?</p>
+                            <p class="text-zinc-600">Không. Xóa phòng ban chỉ bỏ liên kết, người dùng vẫn tồn tại trong hệ thống.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Nên backup dữ liệu như thế nào?</p>
+                            <p class="text-zinc-600">Mỗi tháng xuất nhật ký hệ thống ra Excel để lưu trữ. Đây là cách đơn giản nhất để có bản sao dự phòng.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ho-tro" class="mt-20 bg-red-50 p-12 rounded-3xl text-center">
+                    <h2 class="text-3xl font-bold text-red-800">13. HỖ TRỢ KỸ THUẬT</h2>
+                    <div class="mt-8 text-lg">
+                        <p><strong>Email:</strong> nguyenduclenqna@gmail.com</p>
+                        <p class="mt-2"><strong>Thiết kế và xây dựng hệ thống:</strong> Nguyễn Đức Lên – SĐT: 0905859265</p>
+                    </div>
+
+                    <div class="mt-12 p-8 bg-amber-50 border-2 border-amber-400 rounded-2xl">
+                        <p class="font-bold text-amber-800 text-xl mb-4">⚠️ LƯU Ý QUAN TRỌNG CHO ADMIN</p>
+                        <ul class="text-left space-y-3 text-amber-800">
+                            <li>🔐 <strong>Bảo mật:</strong> Không chia sẻ Admin PIN cho bất kỳ ai</li>
+                            <li>📊 <strong>Nhật ký:</strong> Kiểm tra nhật ký định kỳ để phát hiện bất thường</li>
+                            <li>💾 <strong>Backup:</strong> Xuất Excel nhật ký cuối mỗi tháng</li>
+                            <li>🚫 <strong>Quyền hạn:</strong> Chỉ sử dụng quyền Admin khi thực sự cần thiết</li>
+                            <li>📱 <strong>Thông báo:</strong> Kiểm tra người dùng đã đăng ký thiết bị chưa trước khi gửi thông báo</li>
+                        </ul>
+                    </div>
+
+                    <p class="mt-12 text-red-700 font-medium text-xl">Chúc đồng chí quản trị hệ thống hiệu quả!<br>Đảng ủy xã Gò Nổi</p>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-zinc-900 text-white py-8 text-center text-sm">
+            Hệ thống Thông báo Lịch công tác Đảng ủy Xã Gò Nổi © 2026 • Dành riêng cho Quản trị viên
+        </footer>
+    </div>
+
+    <script>
+        console.log("%c✅ File HTML dành cho ADMIN đã hoàn tất! Copy toàn bộ và lưu thành huong-dan-admin.html", "color:#991b1b; font-size:16px; font-weight:bold");
+    </script>
+</body>
+</html>

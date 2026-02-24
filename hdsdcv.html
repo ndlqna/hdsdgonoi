@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HƯỚNG DẪN SỬ DỤNG - DÀNH CHO CHUYÊN VIÊN | Hệ Thống Lịch Công Tác Đảng Ủy Xã Gò Nổi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+        body { font-family: 'Roboto', system-ui, sans-serif; }
+        .toc a { transition: all 0.3s; }
+        .toc a:hover { background-color: #166534; color: white; padding-left: 1.25rem; }
+        .section-title { position: relative; padding-left: 1.5rem; }
+        .section-title:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.35rem;
+            width: 8px;
+            height: 1.6rem;
+            background: linear-gradient(to bottom, #166534, #4ade80);
+            border-radius: 9999px;
+        }
+        .step-number {
+            background: #166534;
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            font-weight: 700;
+        }
+        table { border-collapse: collapse; }
+        th, td { padding: 14px 20px; vertical-align: top; }
+    </style>
+</head>
+<body class="bg-zinc-100 text-zinc-800">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl min-h-screen">
+
+        <!-- HEADER -->
+        <header class="bg-emerald-800 text-white py-10 px-12">
+            <div class="flex items-center gap-6">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-5xl">📅</div>
+                <div>
+                    <h1 class="text-4xl font-bold tracking-tighter">HỆ THỐNG THÔNG BÁO LỊCH CÔNG TÁC</h1>
+                    <p class="text-emerald-200 text-2xl mt-1 font-medium">ĐẢNG ỦY XÃ GÒ NỔI</p>
+                    <div class="mt-3 inline-flex items-center gap-3 bg-white/10 px-5 py-2 rounded-3xl text-sm">
+                        <span class="bg-emerald-500 text-white px-3 py-1 rounded-3xl font-medium">DÀNH CHO CHUYÊN VIÊN</span>
+                        <span class="text-emerald-100">Phiên bản 1.0 • 24/02/2026</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex">
+            <!-- SIDEBAR MỤC LỤC -->
+            <div class="w-80 bg-zinc-50 border-r border-zinc-200 p-8 h-[calc(100vh-172px)] overflow-y-auto sticky top-0">
+                <h2 class="uppercase text-emerald-700 font-bold text-sm tracking-widest mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-bars"></i> MỤC LỤC CHI TIẾT
+                </h2>
+                <nav class="toc space-y-1 text-[15px]">
+                    <a href="#gioi-thieu" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">1. Giới thiệu</a>
+                    <a href="#dang-nhap" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">2. Đăng nhập hệ thống</a>
+                    <a href="#trang-tong-quan" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">3. Trang Tổng quan (Dashboard)</a>
+                    <a href="#trang-lich" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">4. Trang Lịch công tác</a>
+                    <a href="#tao-lich" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">5. Tạo lịch mới</a>
+                    <a href="#sua-xoa" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">6. Sửa / Xóa lịch</a>
+                    <a href="#thong-bao" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">7. Đăng ký & Quản lý thông báo nhắc việc</a>
+                    <a href="#ho-so" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">8. Hồ sơ cá nhân & Đổi mật khẩu</a>
+                    <a href="#quick" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">9. Hướng dẫn nhanh</a>
+                    <a href="#faq" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">10. Câu hỏi thường gặp</a>
+                    <a href="#ho-tro" class="block py-3 px-5 rounded-2xl hover:bg-emerald-700">11. Hỗ trợ kỹ thuật</a>
+                </nav>
+            </div>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <div class="flex-1 p-12 max-w-3xl prose prose-zinc prose-headings:text-emerald-800">
+
+                <section id="gioi-thieu">
+                    <h2 class="section-title text-3xl font-bold">1. GIỚI THIỆU</h2>
+                    <div class="my-8 p-8 bg-emerald-50 border-l-8 border-emerald-700 rounded-3xl">
+                        <p class="text-lg leading-relaxed">
+                            Hệ thống Thông báo Lịch công tác Đảng ủy Xã Gò Nổi giúp các đồng chí Chuyên viên quản lý lịch công tác một cách tập trung, khoa học và chủ động. 
+                            Mọi thông tin giao việc, lịch họp, nhắc nhở đều được cập nhật thời gian thực. 
+                            Đồng chí chỉ cần đăng nhập là có thể xem lịch cá nhân, lịch chung của toàn xã, tự tạo lịch và nhận nhắc việc tự động.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="dang-nhap" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">2. ĐĂNG NHẬP HỆ THỐNG</h2>
+                    <div class="mt-8 space-y-6">
+                        <div class="flex gap-6">
+                            <div class="step-number">1</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Mở trình duyệt (Chrome, Edge, Firefox…)</p>
+                                <p class="text-zinc-600">Truy cập địa chỉ website hệ thống do Quản trị viên cung cấp.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">2</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Nhập thông tin</p>
+                                <p class="text-zinc-600">Email và Mật khẩu được cấp khi tạo tài khoản.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="step-number">3</div>
+                            <div class="flex-1">
+                                <p class="font-semibold">Nhấn “Đăng nhập”</p>
+                                <p class="text-zinc-600">Lần đầu tiên hệ thống sẽ yêu cầu đổi mật khẩu ngay (tối thiểu 8 ký tự, có chữ hoa, chữ thường, số, ký tự đặc biệt).</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="trang-tong-quan" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">3. TRANG TỔNG QUAN (DASHBOARD)</h2>
+                    <p class="mt-6 text-lg">Đây là trang đầu tiên sau khi đăng nhập, giúp đồng chí nắm tình hình công tác chỉ trong 10 giây.</p>
+
+                    <div class="grid grid-cols-1 gap-8 mt-10">
+                        <div class="bg-white border border-emerald-200 p-8 rounded-3xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i class="fa-solid fa-rotate text-3xl text-emerald-600"></i>
+                                <div>
+                                    <p class="font-bold text-xl">Nút Làm mới</p>
+                                    <p class="text-emerald-700">Nhấp để tải lại dữ liệu mới nhất từ máy chủ</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white border border-emerald-200 p-8 rounded-3xl">
+                                <p class="font-bold text-xl mb-3">Nút Xem lịch</p>
+                                <p class="text-zinc-600">Chuyển ngay đến Trang Lịch công tác</p>
+                            </div>
+                            <div class="bg-white border border-emerald-200 p-8 rounded-3xl">
+                                <p class="font-bold text-xl mb-3">Nút Tạo lịch mới</p>
+                                <p class="text-zinc-600">Chuyển đến trang lịch và bắt đầu tạo ngay</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-emerald-200 p-8 rounded-3xl space-y-8">
+                            <div>
+                                <p class="font-bold text-emerald-700 text-lg">Ô “Lịch tuần này”</p>
+                                <p class="text-4xl font-bold text-emerald-600">Số lượng công việc còn trong tuần hiện tại</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-emerald-700 text-lg">Ô “Lịch hôm nay”</p>
+                                <p class="text-4xl font-bold text-emerald-600">Số lượng công việc cần làm hôm nay</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-emerald-700 text-lg">Ô “Sự kiện hôm nay”</p>
+                                <p class="text-zinc-600">Liệt kê chi tiết tất cả lịch liên quan đến đồng chí trong ngày hôm nay (công việc được giao + lịch tự tạo)</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-emerald-700 text-lg">Ô “Hoạt động gần đây”</p>
+                                <p class="text-zinc-600">Hiển thị 8–10 hành động mới nhất (ai giao lịch gì, bạn vừa tạo lịch nào…)</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="trang-lich" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">4. TRANG LỊCH CÔNG TÁC</h2>
+                    <p class="mt-6 text-lg">Trang quan trọng nhất – nơi đồng chí xem và quản lý toàn bộ lịch công tác.</p>
+
+                    <div class="mt-10 bg-white border-2 border-emerald-600 rounded-3xl p-10">
+                        <p class="uppercase text-emerald-700 font-bold tracking-widest text-sm mb-4">2 CHẾ ĐỘ XEM</p>
+                        <div class="grid grid-cols-2 gap-10">
+                            <div>
+                                <div class="text-2xl font-bold text-emerald-700 mb-2">Thời khóa biểu</div>
+                                <p class="text-zinc-600 leading-relaxed">Dạng lịch theo ngày/giờ (mặc định)</p>
+                                <ul class="mt-6 space-y-3">
+                                    <li class="flex items-start gap-3"><span class="text-emerald-600 font-bold">•</span> Tab <strong>Của tôi</strong>: Chỉ xem lịch cá nhân và lịch được giao cho mình</li>
+                                    <li class="flex items-start gap-3"><span class="text-emerald-600 font-bold">•</span> Tab <strong>Tất cả</strong>: Xem toàn bộ lịch công tác của Đảng ủy xã</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-emerald-700 mb-2">Danh sách</div>
+                                <p class="text-zinc-600 leading-relaxed">Dạng bảng chi tiết, có tìm kiếm và lọc theo ngày, loại lịch, người tham gia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tao-lich" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">5. TẠO LỊCH MỚI</h2>
+                    <div class="mt-8 bg-white p-10 rounded-3xl border border-zinc-200">
+                        <ol class="space-y-8">
+                            <li class="flex gap-6">
+                                <div class="step-number">1</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold">Nhấn nút <span class="text-emerald-700">Tạo lịch mới</span> hoặc click trực tiếp vào ô ngày/giờ trống trên lịch tuần</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-6">
+                                <div class="step-number">2</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold">Điền đầy đủ thông tin:</p>
+                                    <div class="mt-4 grid grid-cols-2 gap-6 text-sm">
+                                        <div>Tiêu đề lịch công tác</div>
+                                        <div>Ngày diễn ra</div>
+                                        <div>Giờ bắt đầu &amp; kết thúc</div>
+                                        <div>Địa điểm (không bắt buộc)</div>
+                                        <div>Mô tả chi tiết</div>
+                                        <div>Người tham gia (chọn nhiều đồng chí)</div>
+                                        <div>Nhắc nhở (5 phút, 15 phút, 30 phút, 1 giờ, 1 ngày…)</div>
+                                        <div>Loại lịch: Công việc cá nhân / Cuộc họp / Sự kiện khác</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex gap-6">
+                                <div class="step-number">3</div>
+                                <div class="flex-1">
+                                    <p class="font-semibold">Nhấn <span class="bg-emerald-700 text-white px-6 py-2 rounded-2xl">LƯU</span></p>
+                                    <p class="text-emerald-600 mt-2">Hệ thống sẽ tự động gửi thông báo cho người tham gia.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="sua-xoa" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">6. SỬA / XÓA LỊCH</h2>
+                    <div class="mt-8 p-8 bg-amber-50 border border-amber-300 rounded-3xl">
+                        <p class="font-medium text-amber-800">Quy tắc quan trọng:</p>
+                        <ul class="mt-4 space-y-3">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-600"></i> Chỉ được sửa / xóa lịch <strong>do chính đồng chí tạo</strong></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-xmark text-red-600"></i> Không được sửa / xóa lịch do người khác giao (chỉ xem được)</li>
+                        </ul>
+                    </div>
+                    <p class="mt-6">Cách thực hiện: Click vào lịch trên màn hình → chọn nút <strong>Sửa</strong> hoặc <strong>Xóa</strong> → xác nhận.</p>
+                </section>
+
+                <section id="thong-bao" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">7. ĐĂNG KÝ &amp; QUẢN LÝ THÔNG BÁO NHẮC VIỆC</h2>
+                    <div class="mt-8">
+                        <ol class="space-y-6">
+                            <li><span class="font-bold text-emerald-700">Bước 1:</span> Chọn menu <strong>Thông báo</strong> ở thanh bên trái</li>
+                            <li><span class="font-bold text-emerald-700">Bước 2:</span> Chọn tab <strong>Thiết bị của tôi</strong></li>
+                            <li><span class="font-bold text-emerald-700">Bước 3:</span> Nhấn <strong>Đăng ký thiết bị mới</strong></li>
+                            <li><span class="font-bold text-emerald-700">Bước 4:</span> Cho phép trình duyệt gửi thông báo</li>
+                            <li><span class="font-bold text-emerald-700">Bước 5:</span> Đặt tên thiết bị (ví dụ: “Máy tính văn phòng chi bộ 1”, “Điện thoại cá nhân”) → Nhấn Đăng ký</li>
+                        </ol>
+                    </div>
+                    <p class="mt-10 text-emerald-700 font-medium">Sau khi đăng ký, đồng chí sẽ nhận thông báo nhắc lịch ngay cả khi trình duyệt đang đóng!</p>
+                </section>
+
+                <section id="ho-so" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">8. HỒ SƠ CÁ NHÂN &amp; ĐỔI MẬT KHẨU</h2>
+                    <div class="mt-8 grid grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-3xl border">
+                            <p class="font-bold mb-4">Xem thông tin cá nhân</p>
+                            <p class="text-zinc-600">Họ tên, Email, Vai trò (Chuyên viên), Chi bộ/Phòng ban</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border">
+                            <p class="font-bold mb-4">Đổi mật khẩu</p>
+                            <p class="text-zinc-600">Nhập mật khẩu hiện tại → mật khẩu mới → xác nhận → Đổi mật khẩu</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="quick" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">9. HƯỚNG DẪN NHANH</h2>
+                    <div class="mt-8 bg-zinc-900 text-white p-10 rounded-3xl font-mono text-sm leading-relaxed">
+                        <p class="text-emerald-400 mb-6">TẠO LỊCH NHANH:</p>
+                        Lịch công tác → click ô trống trên lịch tuần<br><br>
+                        <p class="text-emerald-400 mb-6">ĐĂNG KÝ THÔNG BÁO:</p>
+                        Thông báo → Thiết bị của tôi → Đăng ký thiết bị mới<br><br>
+                        <p class="text-emerald-400 mb-6">XEM LỊCH KHÁC:</p>
+                        Tab “Tất cả” trong chế độ Thời khóa biểu
+                    </div>
+                </section>
+
+                <section id="faq" class="mt-20">
+                    <h2 class="section-title text-3xl font-bold">10. CÂU HỎI THƯỜNG GẶP</h2>
+                    <div class="mt-10 space-y-10">
+                        <div>
+                            <p class="font-semibold text-lg">Tôi không nhận được thông báo?</p>
+                            <p class="text-zinc-600">Kiểm tra đã đăng ký thiết bị chưa và trình duyệt đã cho phép thông báo chưa.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Làm sao xem lịch tuần khác?</p>
+                            <p class="text-zinc-600">Dùng nút ◀ Tuần trước / Tuần sau ▶ hoặc nút “Hôm nay”.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Tôi chỉ được sửa lịch của mình phải không?</p>
+                            <p class="text-zinc-600">Đúng vậy. Lịch do người khác giao chỉ xem được.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ho-tro" class="mt-20 bg-emerald-50 p-12 rounded-3xl text-center">
+                    <h2 class="text-3xl font-bold text-emerald-800">11. HỖ TRỢ KỸ THUẬT</h2>
+                    <div class="mt-8 text-lg">
+                        <p><strong>Email:</strong> nguyenduclenqna@gmail.com</p>
+                        <p class="mt-2"><strong>Thiết kế và xây dựng hệ thống:</strong> Nguyễn Đức Lên – SĐT: 0905859265</p>
+                    </div>
+                    <p class="mt-12 text-emerald-700 font-medium text-xl">Chúc đồng chí sử dụng hệ thống hiệu quả!<br>Đảng ủy xã Gò Nổi</p>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-zinc-900 text-white py-8 text-center text-sm">
+            Hệ thống Thông báo Lịch công tác Đảng ủy Xã Gò Nổi © 2026 • Dành riêng cho Chuyên viên
+        </footer>
+    </div>
+
+    <script>
+        console.log("%c✅ File HTML dành cho CHUYÊN VIÊN đã hoàn tất! Copy toàn bộ và lưu thành huong-dan-chuyen-vien.html", "color:#166534; font-size:16px; font-weight:bold");
+    </script>
+</body>
+</html>
