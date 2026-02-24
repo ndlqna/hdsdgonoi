@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Sử Dụng - Hệ Thống Lịch Công Tác Đảng Ủy Xã Gò Nổi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+        body { 
+            font-family: 'Roboto', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-red {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+        
+        <!-- HEADER -->
+        <div class="text-center mb-16 float-animation">
+            <div class="inline-block mb-6">
+                <div class="w-32 h-32 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center text-7xl shadow-2xl">
+                    📅
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
+                HỆ THỐNG THÔNG BÁO
+            </h1>
+            <h2 class="text-4xl md:text-5xl font-bold text-white/90 mb-6">
+                LỊCH CÔNG TÁC
+            </h2>
+            <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full">
+                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <p class="text-white/90 text-xl font-medium">Đảng Ủy Xã Gò Nổi</p>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl w-full mb-12">
+            
+            <!-- CARD CHUYÊN VIÊN -->
+            <a href="hdsdcv.html" class="card-hover block">
+                <div class="bg-white rounded-3xl p-10 shadow-2xl border-4 border-emerald-500/20 hover:border-emerald-500">
+                    <div class="text-center">
+                        <div class="inline-block mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center text-5xl shadow-lg transform rotate-3">
+                                👤
+                            </div>
+                        </div>
+                        <h3 class="gradient-text text-4xl font-black mb-4">
+                            CHUYÊN VIÊN
+                        </h3>
+                        <p class="text-zinc-600 text-lg mb-8 leading-relaxed">
+                            Hướng dẫn dành cho đồng chí Chuyên viên sử dụng hệ thống: xem lịch, tạo lịch, nhận thông báo nhắc việc.
+                        </p>
+                        <div class="bg-emerald-50 rounded-2xl p-6 mb-6">
+                            <p class="text-sm text-emerald-700 font-semibold mb-3">✨ Bao gồm:</p>
+                            <ul class="text-sm text-left space-y-2 text-emerald-700">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Xem và tạo lịch công tác</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Đăng ký nhận thông báo</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Quản lý hồ sơ cá nhân</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center gap-3 bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold text-lg group-hover:bg-emerald-700 transition-colors">
+                            <span>Xem hướng dẫn</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CARD ADMIN -->
+            <a href="hdsdadmin.html" class="card-hover block">
+                <div class="bg-white rounded-3xl p-10 shadow-2xl border-4 border-red-500/20 hover:border-red-500">
+                    <div class="text-center">
+                        <div class="inline-block mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center text-5xl shadow-lg transform -rotate-3">
+                                👑
+                            </div>
+                        </div>
+                        <h3 class="gradient-text-red text-4xl font-black mb-4">
+                            QUẢN TRỊ VIÊN
+                        </h3>
+                        <p class="text-zinc-600 text-lg mb-8 leading-relaxed">
+                            Hướng dẫn dành cho đồng chí Quản trị viên: quản lý người dùng, phòng ban, lịch và hệ thống.
+                        </p>
+                        <div class="bg-red-50 rounded-2xl p-6 mb-6">
+                            <p class="text-sm text-red-700 font-semibold mb-3">🔐 Bao gồm:</p>
+                            <ul class="text-sm text-left space-y-2 text-red-700">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Quản lý người dùng & phòng ban</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Gửi thông báo hệ thống</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check mt-1"></i>
+                                    <span>Xem nhật ký & Admin PIN</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center justify-center gap-3 bg-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg group-hover:bg-red-700 transition-colors">
+                            <span>Xem hướng dẫn</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- FOOTER INFO -->
+        <div class="text-center space-y-4">
+            <div class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
+                <i class="fa-solid fa-book text-white/70"></i>
+                <span class="text-white/90 text-sm font-medium">Phiên bản 1.0</span>
+                <span class="text-white/50">•</span>
+                <span class="text-white/90 text-sm font-medium">24/02/2026</span>
+            </div>
+            
+            <div class="text-white/60 text-sm">
+                <p class="mb-2">
+                    <i class="fa-solid fa-envelope mr-2"></i>
+                    <a href="mailto:nguyenduclenqna@gmail.com" class="hover:text-white transition-colors">
+                        nguyenduclenqna@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-user-gear mr-2"></i>
+                    Thiết kế: Nguyễn Đức Lên • 
+                    <i class="fa-solid fa-phone ml-2 mr-1"></i>
+                    0905859265
+                </p>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="mt-12 text-center text-white/40 text-xs">
+            © 2026 Hệ thống Thông báo Lịch công tác - Đảng ủy Xã Gò Nổi
+        </div>
+
+    </div>
+
+    <script>
+        // Add group class to cards for hover effect
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.classList.add('group');
+        });
+        
+        console.log("%c✅ Trang chủ đã sẵn sàng!", "color:#10b981; font-size:18px; font-weight:bold");
+        console.log("%c📘 Chuyên viên: hdsdcv.html", "color:#059669; font-size:14px");
+        console.log("%c👑 Admin: hdsdadmin.html", "color:#dc2626; font-size:14px");
+    </script>
+</body>
+</html>
